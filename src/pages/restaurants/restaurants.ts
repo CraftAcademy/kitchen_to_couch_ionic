@@ -15,13 +15,16 @@ export class RestaurantsPage {
     public navParams: NavParams,
     public restaurantsProvider: RestaurantsProvider
   ) {
-    this.restaurantsProvider.all().subscribe( ({data}) => {
-      this.restaurants = data;
-      console.log(this.restaurants);
-    })
+    if (this.navParams.get('restaurants')) {
+      this.restaurants = this.navParams.get('restaurants');
+    } else {
+      this.restaurantsProvider.all().subscribe(({ data }) => {
+        this.restaurants = data;
+      })
+    }
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad RestaurantsPage');
   }
-
 }

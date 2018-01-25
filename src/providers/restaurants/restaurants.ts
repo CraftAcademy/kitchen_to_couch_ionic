@@ -8,9 +8,9 @@ import { Angular2TokenService } from 'angular2-token';
 export class RestaurantsProvider {
 private apiURL: string;
 
-  constructor(public _tokenService: Angular2TokenService) {
-  }
-  all() : Observable<any> {
+  constructor(public _tokenService: Angular2TokenService) {}
+
+  all(): Observable<any> {
     return this._tokenService.get('/restaurants')
           .map(res => res.json())
   }
