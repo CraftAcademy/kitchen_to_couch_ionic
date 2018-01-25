@@ -7,15 +7,18 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from '../pages/home/home';
+import { RestaurantsPage } from '../pages/restaurants/restaurants'
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { RestaurantsProvider } from '../providers/restaurants/restaurants';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    RestaurantsPage,
     TabsPage
   ],
   imports: [
@@ -28,6 +31,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
+    RestaurantsPage,
     TabsPage
   ],
   providers: [
@@ -35,6 +39,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Angular2TokenService,
+    RestaurantsProvider,
   ]
 })
 export class AppModule {}

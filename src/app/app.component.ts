@@ -12,14 +12,19 @@ import { TabsPage } from '../pages/tabs/tabs';
 export class MyApp {
   rootPage:any = TabsPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private _tokenService: Angular2TokenService) {
+  constructor(
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    public _tokenService: Angular2TokenService) {
 
-    platform.ready().then(() => {
-      statusBar.styleDefault();
-      splashScreen.hide();
-      this._tokenService.init({
+    this._tokenService.init({
         apiBase: "https://kitchen-to-couch.herokuapp.com/api/v1"
       });
+
+    platform.ready().then(() => {
+    statusBar.styleDefault();
+    splashScreen.hide();
     });
   }
 }
