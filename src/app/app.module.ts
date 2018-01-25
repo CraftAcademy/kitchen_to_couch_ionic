@@ -13,6 +13,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { RestaurantsProvider } from '../providers/restaurants/restaurants';
+import { MenuProvider } from '../providers/menu/menu';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { RestaurantsProvider } from '../providers/restaurants/restaurants';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Angular2TokenService,
     RestaurantsProvider,
+    MenuProvider,
   ]
 })
 export class AppModule {}
