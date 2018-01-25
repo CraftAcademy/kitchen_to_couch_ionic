@@ -1,7 +1,7 @@
 import { RestaurantsProvider } from './../../providers/restaurants/restaurants';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { MenuProvider } from './../../providers/menu/menu';
+import { MenuPage } from './../menu/menu';
 
 @IonicPage()
 @Component({
@@ -14,8 +14,7 @@ export class RestaurantsPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public restaurantsProvider: RestaurantsProvider,
-    public menuProvider: MenuProvider
+    public restaurantsProvider: RestaurantsProvider
   ) {
     if (this.navParams.get('restaurants')) {
       this.restaurants = this.navParams.get('restaurants');
@@ -25,14 +24,12 @@ export class RestaurantsPage {
       })
     }
   }
+  navigateToMenu() {
+    this.navCtrl.push(MenuPage)
+    console.log('hello')
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RestaurantsPage');
-  }
-
-  navigateToMenu() {
-    this.navCtrl.push(MenuPage, {
-
-    })
   }
 }

@@ -6,7 +6,7 @@ import { Angular2TokenService } from 'angular2-token';
 
 @Injectable()
 export class MenuProvider {
-  private apiURL: string;
+private apiURL: string;
 
   constructor(public _tokenService: Angular2TokenService) {}
 
@@ -15,4 +15,3 @@ export class MenuProvider {
       .map(res => res.json())
   }
 }
-

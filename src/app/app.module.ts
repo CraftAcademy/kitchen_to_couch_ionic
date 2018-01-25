@@ -7,7 +7,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from '../pages/home/home';
-import { RestaurantsPage } from '../pages/restaurants/restaurants'
+import { RestaurantsPage } from '../pages/restaurants/restaurants';
+import { MenuPage } from '../pages/menu/menu';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -20,6 +21,7 @@ import { MenuProvider } from '../providers/menu/menu';
     MyApp,
     HomePage,
     RestaurantsPage,
+    MenuPage,
     TabsPage
   ],
   imports: [
@@ -33,6 +35,7 @@ import { MenuProvider } from '../providers/menu/menu';
     MyApp,
     HomePage,
     RestaurantsPage,
+    MenuPage,
     TabsPage
   ],
   providers: [
