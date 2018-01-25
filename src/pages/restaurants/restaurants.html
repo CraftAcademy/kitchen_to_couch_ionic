@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let restaurant of restaurants" (click)="navigateToMenu()">
+  <ion-card *ngFor="let restaurant of restaurants" (click)="navigateToMenu(restaurant.id)">
     <ion-card-header>
       {{restaurant.attributes.name}}
     </ion-card-header>

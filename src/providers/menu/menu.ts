@@ -11,7 +11,7 @@ private apiURL: string;
   constructor(public _tokenService: Angular2TokenService) {}
 
   all(): Observable<any> {
-    return this._tokenService.get('/restaurants/')
+    return this._tokenService.get('/restaurants/${restaurant.id}')
       .map(res => res.json())
   }
 }

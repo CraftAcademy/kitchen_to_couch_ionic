@@ -10,17 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MenuPage {
   public restaurants :any;
+  public menu :any;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public menuProvider: MenuProvider
   ) {
+    this.menuProvider.all().subscribe(({ data }) => {
+      this.menu = data;
 
+    })
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MenuPage');
-  }
-
 }

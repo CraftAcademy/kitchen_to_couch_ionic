@@ -25,7 +25,9 @@ export class RestaurantsPage {
     }
   }
   navigateToMenu() {
-    this.navCtrl.push(MenuPage)
+    this.navCtrl.push(MenuPage, {
+      
+    })
     console.log('hello')
   }
 
