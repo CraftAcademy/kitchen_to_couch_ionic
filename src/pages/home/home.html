@@ -9,23 +9,8 @@
 <ion-content class="card-background-page" padding>
   <h3>Kitchen to Couch</h3>
   <p>What do you feel like tonight?</p>
-  <ion-card>
-    <img src="assets/imgs/thai.jpg"/>
-    <div class="card-title">Thai</div>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/imgs/american.jpg"/>
-    <div class="card-title">American</div>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/imgs/italian.jpg"/>
-    <div class="card-title">Italian</div>
-  </ion-card>
-
-  <ion-card>
-    <img src="assets/imgs/chinese.jpg"/>
-    <div class="card-title">Chinese</div>
+  <ion-card *ngFor="let assortment of assortments" (click)="navigateToRestaurantPage(assortment.name)">
+    <img [src]="assortment.imagePath"/>
+    <div class="card-title">{{ assortment.name }}</div>
   </ion-card>
 </ion-content>
