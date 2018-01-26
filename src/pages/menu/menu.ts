@@ -10,6 +10,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MenuPage {
   public restaurants :any;
+  public restaurantsId :any;
   public menu :any;
 
   constructor(
@@ -17,7 +18,11 @@ export class MenuPage {
     public navParams: NavParams,
     public menuProvider: MenuProvider
   ) {
-    this.menuProvider.all().subscribe(({ data }) => {
+    if (this.navParams.get('id')) {
+      this.restaurantsId = this.navParams.get('id')
+    }
+
+    this.menuProvider.all(this.restaurantsId).subscribe(({ data }) => {
       this.menu = data;
 
     })

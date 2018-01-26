@@ -24,14 +24,11 @@ export class RestaurantsPage {
       })
     }
   }
-  navigateToMenu() {
+  navigateToMenu(restaurantsId: string) {
     this.navCtrl.push(MenuPage, {
-      
+      id: restaurantsId
     })
     console.log('hello')
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RestaurantsPage');
-  }
 }
