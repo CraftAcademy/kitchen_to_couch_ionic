@@ -9,9 +9,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'menu.html',
 })
 export class MenuPage {
-  public restaurants :any;
   public restaurantsId :any;
-  public menu :any;
+  public menus :any;
 
   constructor(
     public navCtrl: NavController,
@@ -23,7 +22,8 @@ export class MenuPage {
     }
 
     this.menuProvider.all(this.restaurantsId).subscribe(({ data }) => {
-      this.menu = data;
+      debugger;
+      this.menus = data.attributes.menus;
 
     })
   }
