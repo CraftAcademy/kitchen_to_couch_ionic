@@ -1,6 +1,7 @@
 import { RestaurantsProvider } from './../../providers/restaurants/restaurants';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { MenuPage } from './../menu/menu';
 
 @IonicPage()
 @Component({
@@ -23,8 +24,11 @@ export class RestaurantsPage {
       })
     }
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RestaurantsPage');
+  navigateToMenu(restaurantsId: string) {
+    this.navCtrl.push(MenuPage, {
+      id: restaurantsId
+    })
+    console.log('hello')
   }
+
 }
