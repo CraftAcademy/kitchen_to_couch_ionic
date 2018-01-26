@@ -12,15 +12,17 @@
     <ion-card-title>
       {{menu.name}}
     </ion-card-title>
-    <div *ngFor="let product_category of menu.product_categories">
+    <div class="product_header" *ngFor="let product_category of menu.product_categories">
       <ion-card-header>
-        {{product_category.name}}
+        <strong>{{product_category.name}}</strong>
       </ion-card-header>
       <div *ngFor="let product of product_category.products">
-        <button ion-button>
+        <ion-item>
           {{product.name}}
-          {{product.price}}
-        </button>
+          <button ion-button outline item-end icon-left>
+            US$ {{product.price}}
+          </button>
+        </ion-item>
       </div>
     </div>
 
